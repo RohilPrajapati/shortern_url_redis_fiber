@@ -40,7 +40,7 @@ func TestShortenURL(t *testing.T) {
 	os.Setenv("DOMAIN", "localhost:3000")
 
 	app := setupTestApp()
-	// 1. Check for custom_short (PASSING)
+	// 1. Check for custom_short
 
 	t.Run("check for custom_short", func(t *testing.T) {
 		clearRedisDBs()
@@ -146,7 +146,6 @@ func TestShortenURL(t *testing.T) {
 
 		var bodyMap map[string]interface{}
 		_ = json.NewDecoder(resp.Body).Decode(&bodyMap)
-
 
 		resetVal, exists := bodyMap["rate_limit_reset"]
 		if !exists {

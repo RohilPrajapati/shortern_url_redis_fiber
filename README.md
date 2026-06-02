@@ -42,7 +42,7 @@ shortern_url_redis_fiber/
 ├── .data/
 │   └── dump.rdb          # Redis backup file
 ├── database/
-│   └── redis.go          # Configures connections to Redis
+│   └── database.go       # Configures connections to Redis
 ├── helpers/
 │   └── helpers.go        # URL cleansing & validation utilities
 ├── routes/
