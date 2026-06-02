@@ -1,0 +1,16 @@
+
+services:
+  api:
+    build: api
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - ./api/.env
+  db:
+    build: db
+    ports:
+      - "6379:6379"
+    volumes:
+      - .data:/data
